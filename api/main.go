@@ -11,7 +11,7 @@ func RegisterHandlers() *httprouter.Router {
 
 	//2给路由绑定方法
 	router.POST("/user", CreateUser)
-
+	router.POST("/user/:user_name",Login)
 	//3返回此路由return
 	return router
 
