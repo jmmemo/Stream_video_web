@@ -13,6 +13,7 @@ type ErrorResponse struct {
 }
 
 var (
+	//解析错误
 	ErrorRequestBodyParseFailed = ErrorResponse{
 		HttpSC: 400,
 		Error: Err{
@@ -20,12 +21,28 @@ var (
 			ErrorCode: "001",
 		},
 	}
-
+	//未授权错误
 	ErrorNotAuthUser = ErrorResponse{
 		HttpSC: 401,
 		Error: Err{
 			Error:     "User authentication failed",
 			ErrorCode: "002",
+		},
+	}
+	//数据库错误
+	ErrorDBError = ErrorResponse{
+		HttpSC: 500,
+		Error: Err{
+			Error:     "DB ops failed",
+			ErrorCode: "003",
+		},
+	}
+	//
+	ErrorInternalFaults = ErrorResponse{
+		HttpSC: 500,
+		Error: Err{
+			Error:     "Internal service error",
+			ErrorCode: "004",
 		},
 	}
 )
