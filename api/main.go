@@ -58,12 +58,12 @@ func Prepare() {
 func main() {
 	Prepare()
 
-	//1拿到路由器
+	//1拿到路由
 	r := RegisterHandlers()
 
 	mh := NewMiddleWareHandler(r)
 
 	//2开始监听
-	http.ListenAndServe(":8000", mh) //使用自定义handler：MH
+	http.ListenAndServe(":8000", mh) //使用自定义handler：mh
 
 }
